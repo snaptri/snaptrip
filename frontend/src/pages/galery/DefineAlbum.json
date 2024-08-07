@@ -1,0 +1,93 @@
+{
+	"define_objevtive": [
+		{
+			"id": 0,
+			"objective": "Canon RF 24-70mm f/2.8L IS USM"
+		},
+		{
+			"id": 1,
+			"objective": "Nikon Z 70-200mm f/2.8 VR S"
+		},
+		{
+			"id": 2,
+			"objective": "Sony FE 24-70mm f/2.8 GM"
+		},
+		{
+			"id": 3,
+			"objective": "Fujifilm XF 16-55mm f/2.8 R LM WR"
+		}
+	],
+	"define_camera": [
+		{
+			"id": 0,
+			"camera": "Canon EOS 6D"
+		},
+		{
+			"id": 1,
+			"camera": "Canon EOS 7D"
+		},
+		{
+			"id": 2,
+			"camera": "Canon EOS 5D Mark IV"
+		},
+		{
+			"id": 3,
+			"camera": "Canon EOS 5D Mark III"
+		},
+		{
+			"id": 4,
+			"camera": "Canon EOS 5D Mark II"
+		},
+		{
+			"id": 5,
+			"camera": "Canon EOS 5D"
+		}
+	],
+	"checkboxOptions": [
+		{
+			"id": 0,
+			"name": "paisaje",
+			"label": "Paisaje"
+		},
+		{
+			"id": 1,
+			"name": "naturaleza",
+			"label": "Naturaleza"
+		},
+		{
+			"id": 2,
+			"name": "street",
+			"label": "Street"
+		},
+		{
+			"id": 3,
+			"name": "nocturno",
+			"label": "Nocturno"
+		},
+		{
+			"id": 4,
+			"name": "aereo",
+			"label": "Aereo"
+		},
+		{
+			"id": 5,
+			"name": "retrato",
+			"label": "Retrato"
+		},
+		{
+			"id": 6,
+			"name": "personas",
+			"label": "Personas"
+		},
+		{
+			"id": 7,
+			"name": "cultura",
+			"label": "Cultura"
+		},
+		{
+			"id": 8,
+			"name": "otros",
+			"label": "Otros"
+		}
+	]
+}
