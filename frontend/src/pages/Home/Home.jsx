@@ -1,11 +1,9 @@
 /* eslint-disable arrow-body-style */
 import { Box, Container, Fab, Stack, Typography } from '@mui/material'
 import { NavBar } from '../../components'
-import banner from '../../assets/img/banner.png'
 import people from '../../assets/img/people-banner.png'
 import bg from '../../assets/img/bg_section.png'
-import { HomeEventSwiper } from './HomeEventSwiper'
-import { HomeFeaturedSwiper } from './HomeFeaturedSwiper'
+import { HomeBannerSwiper, HomeFeaturedSwiper } from './swipers'
 import { ContactForm } from './ContactForm'
 
 export const Home = () => {
@@ -20,10 +18,6 @@ export const Home = () => {
 			>
 				<Box
 					sx={{
-						backgroundImage: `url(${banner})`,
-						backgroundSize: 'cover',
-						backgroundPosition: 'center',
-						backgroundRepeat: 'no-repeat',
 						height: '500px',
 						width: { xs: '100%' },
 						display: 'flex',
@@ -34,37 +28,22 @@ export const Home = () => {
 						px: '10px',
 					}}
 				>
-					<Typography
-						sx={{
-							fontWeight: '600',
-							fontSize: '2.5rem',
-							color: '#fff',
-						}}
-					>
-						Planifica tu viaje fotográfico perfecto
-					</Typography>
-					<Typography
-						sx={{
-							fontWeight: '700',
-							fontSize: '1.25rem',
-							color: '#fff',
-							opacity: '0.7',
-						}}
-					>
-						Descubre como SnapTrip puede ayudarte a planificar tu
-						viaje.
-					</Typography>
+					<HomeBannerSwiper />
+					
 					<Fab
 						variant="extended"
 						sx={{
-							backgroundColor: '#6E9E30',
+							backgroundColor: '#6e9e30',
 							color: '#fff',
 							width: { xs: '188px' },
 							fontSize: { xs: '12px' },
 							mt: '106px',
+							'&:hover': {
+								backgroundColor: '#0D4937'
+							}
 						}}
 					>
-						Crear
+						Empezar ahora
 					</Fab>
 				</Box>
 				<Container
@@ -87,7 +66,6 @@ export const Home = () => {
 					<Typography sx={{ color: '#313031', fontWeight: '400' }}>
 						Los viajes más recientes de nuestra comunidad.
 					</Typography>
-					<HomeEventSwiper />
 					<Box
 						sx={{
 							position: 'relative',
@@ -126,6 +104,9 @@ export const Home = () => {
 								width: { xs: '148px' },
 								fontSize: { xs: '12px' },
 								my: '50px',
+								'&:hover': {
+								backgroundColor: '#0D4937'
+							}
 							}}
 						>
 							Crear evento

@@ -21,7 +21,7 @@ export const SideBar = () => {
 
 	const DrawerList = (
 		<Box
-			sx={{ width: 250 }}
+			sx={{ width: 250, backgroundColor: '#F6FFF4', height: '100vh' }}
 			role="presentation"
 			onClick={toggleDrawer(false)}
 		>
@@ -42,7 +42,6 @@ export const SideBar = () => {
 					)
 				)}
 			</List>
-			<Divider />
 		</Box>
 	)
 

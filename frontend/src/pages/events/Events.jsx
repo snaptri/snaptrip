@@ -17,7 +17,7 @@ export const Events = () => {
 			<Box
 				sx={{
 					display: 'flex',
-					flexDirection: { xs: 'column', md: 'row' },
+					flexDirection:'column',
 					gap: '15px',
 					mb: '100px',
 				}}
@@ -25,7 +25,7 @@ export const Events = () => {
 				<IconButton aria-label="filter" sx={{ alignSelf: 'flex-end' }}>
 					<TuneIcon />
 				</IconButton>
-				<EventsCard />
+					<EventsCard />
 				<Fab
 					variant="extended"
 					onClick={handleOpen}

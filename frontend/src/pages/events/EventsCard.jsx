@@ -3,16 +3,21 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import { CardActionArea, List, ListItem } from '@mui/material'
+import { CardActionArea, Grid, List, ListItem } from '@mui/material'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import events from './events.json'
 
 export const EventsCard = () => {
 	return (
-		<>
+		<div className='grid grid-cols-1 gap-6 w-full md:grid-cols-2 md:justify-center'>
 			{events.map((event, index) => (
-				<Card sx={{ minWidth: 325, borderRadius: '20px' }} key={index}>
+				
+					<Card sx={{ 
+						borderRadius: '20px',
+					}} 
+					key={index}
+					>
 					<CardActionArea
 						sx={{
 							display: 'flex',
@@ -70,6 +75,6 @@ export const EventsCard = () => {
 					</CardActionArea>
 				</Card>
 			))}
-		</>
+		</div>
 	)
 }

@@ -102,7 +102,7 @@ export const NavBar = () => {
 								alignItems: 'center',
 							}}
 						>
-							<SearchBar />
+							{/* <SearchBar /> */}
 							{user ?
 								<Profile />
 							:	<Box>

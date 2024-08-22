@@ -54,6 +54,9 @@ export const ContactForm = () => {
 					width: { xs: '152px' },
 					fontSize: { xs: '12px' },
 					alignSelf: 'flex-end',
+					'&:hover': {
+						backgroundColor: '#0D4937'
+					}
 				}}
 			>
 				Enviar

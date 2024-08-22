@@ -45,7 +45,7 @@ const useUserStore = create((set) => ({
 			}
 
 			const response = await fetch(
-				`${import.meta.env.VITE_BACKEND_URL}/account/profile/`,
+				`${import.meta.env.VITE_BACKEND_URL}/account/profile`,
 				{
 					method: 'PUT',
 					headers: headers,
