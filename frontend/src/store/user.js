@@ -26,7 +26,7 @@ export const useUserStoreTemp = create(() => ({
 		const body = await response.json()
 		localStorage.setItem('token', body.access)
 
-		console.log(body.access);
+		console.log(body.access)
 
 		successToast({
 			title: 'Inicio de sesión exitoso.',

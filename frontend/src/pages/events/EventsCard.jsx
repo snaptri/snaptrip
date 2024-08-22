@@ -10,14 +10,14 @@ import events from './events.json'
 
 export const EventsCard = () => {
 	return (
-		<div className='grid grid-cols-1 gap-6 w-full md:grid-cols-2 md:justify-center'>
+		<div className="grid grid-cols-1 gap-6 w-full md:grid-cols-2 md:justify-center">
 			{events.map((event, index) => (
-				
-					<Card sx={{ 
+				<Card
+					sx={{
 						borderRadius: '20px',
-					}} 
+					}}
 					key={index}
-					>
+				>
 					<CardActionArea
 						sx={{
 							display: 'flex',

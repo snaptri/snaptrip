@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
-import 'swiper/css/navigation';
+import 'swiper/css/navigation'
 
 import './styles.css'
 import images from './galleryHome.json'
@@ -33,7 +33,7 @@ export const HomeFeaturedSwiper = () => {
 				className="mySwiper"
 			>
 				{images.sections?.featured.map((img, index) => (
-					<SwiperSlide key={index} >
+					<SwiperSlide key={index}>
 						<img src={img.image_url} alt={img.title} />
 						<ListItem sx={{ p: 0, gap: '5px' }}>
 							<AccountCircleOutlinedIcon

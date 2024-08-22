@@ -29,7 +29,7 @@ export const Home = () => {
 					}}
 				>
 					<HomeBannerSwiper />
-					
+
 					<Fab
 						variant="extended"
 						sx={{
@@ -39,8 +39,8 @@ export const Home = () => {
 							fontSize: { xs: '12px' },
 							mt: '106px',
 							'&:hover': {
-								backgroundColor: '#0D4937'
-							}
+								backgroundColor: '#0D4937',
+							},
 						}}
 					>
 						Empezar ahora
@@ -105,8 +105,8 @@ export const Home = () => {
 								fontSize: { xs: '12px' },
 								my: '50px',
 								'&:hover': {
-								backgroundColor: '#0D4937'
-							}
+									backgroundColor: '#0D4937',
+								},
 							}}
 						>
 							Crear evento
