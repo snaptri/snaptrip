@@ -52,13 +52,25 @@ export const Form = () => {
 	const handleLogin = async () => {
 		setIsLoading(true)
 		const isError = await login(loginInfo, navigate)
+
 		setShowError(isError)
 		setIsLoading(false)
+
+		resetState(isError)
+	}
+
+	const resetState = (error) => {
+		if (error === false) {
+			setLoginInfo({
+				email: '',
+				password: '',
+			})
+		}
 	}
 
 	useEffect(() => {
 		isDisable()
-	}, [loginInfo])
+	}, [loginInfo, isLoading])
 
 	return (
 		<>
@@ -80,6 +92,7 @@ export const Form = () => {
 						type={showPassword ? 'text' : 'password'}
 						label="Password"
 						name="password"
+						value={loginInfo.password}
 						endAdornment={
 							<InputAdornment position="end">
 								<IconButton
