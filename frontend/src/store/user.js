@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { create } from 'zustand'
 import { errorToast, successToast } from '../utils/toast'
 
@@ -14,19 +13,16 @@ export const useUserStoreTemp = create(() => ({
 				body: JSON.stringify(data),
 			}
 		)
-		console.log(data)
 		const STATUS_OK = 200
 		if (response.status !== STATUS_OK) {
 			errorToast({
 				title: 'Algo salió mal.',
 				description: 'Por favor intentelo de nuevo.',
 			})
-			return
+			return true
 		}
 		const body = await response.json()
 		localStorage.setItem('token', body.access)
-
-		console.log(body.access)
 
 		successToast({
 			title: 'Inicio de sesión exitoso.',
@@ -37,5 +33,7 @@ export const useUserStoreTemp = create(() => ({
 		setTimeout(() => {
 			navigate('/account')
 		}, MILLISECONDS_TO_REDIRECT)
+
+		return false
 	},
 }))

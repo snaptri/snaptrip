@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { CustomTextField } from './CustomTextField'
+// MUI
 import {
 	Button,
 	FormControl,
@@ -10,6 +9,11 @@ import {
 } from '@mui/material'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import Visibility from '@mui/icons-material/Visibility'
+import ErrorIcon from '@mui/icons-material/Error'
+
+// React and utilities
+import { useEffect, useState } from 'react'
+import { CustomTextField } from './CustomTextField'
 import { useUserStoreTemp } from '../../store'
 import { useNavigate } from 'react-router-dom'
 
@@ -17,6 +21,7 @@ export const Form = () => {
 	const { login } = useUserStoreTemp()
 	const navigate = useNavigate()
 
+	const [showError, setShowError] = useState(false)
 	const [showPassword, setShowPassword] = useState(false)
 	const [disabled, setDisabled] = useState(true)
 	const [loginInfo, setLoginInfo] = useState({
@@ -40,6 +45,11 @@ export const Form = () => {
 				false
 			:	true
 		)
+	}
+
+	const handleLogin = async () => {
+		const isError = await login(loginInfo, navigate)
+		setShowError(isError)
 	}
 
 	useEffect(() => {
@@ -83,12 +93,19 @@ export const Form = () => {
 						onChange={handleChange}
 					/>
 				</FormControl>
-				<div className="self-start">
-					<p className="text-[#807D84] text-xs flex gap-1 mt-2">
-						¿Olvidaste tu contraseña?
-						<span className="text-[#6E9E30]">Recuperar</span>
-					</p>
-				</div>
+
+				{showError ?
+					<div className="text-red-500 flex justify-center gap-2 text-xs">
+						<ErrorIcon />
+						Email o contraseña incorrecta. Vuelve a intentarlo o
+						selecciona "Recuperar" para cambiar la contraseña.
+					</div>
+				:	null}
+
+				<p className="text-[#807D84] text-xs flex gap-1 mt-2">
+					¿Olvidaste tu contraseña?
+					<span className="text-[#6E9E30]">Recuperar</span>
+				</p>
 			</div>
 
 			<div className="py-8">
@@ -108,9 +125,7 @@ export const Form = () => {
 							bgcolor: '#b5cd98',
 						},
 					}}
-					onClick={() => {
-						login(loginInfo, navigate)
-					}}
+					onClick={handleLogin}
 				>
 					Ingresar
 				</Button>
