@@ -1,6 +1,7 @@
 // MUI
 import {
 	Button,
+	CircularProgress,
 	FormControl,
 	IconButton,
 	InputAdornment,
@@ -22,6 +23,7 @@ export const Form = () => {
 	const navigate = useNavigate()
 
 	const [showError, setShowError] = useState(false)
+	const [isLoading, setIsLoading] = useState(false)
 	const [showPassword, setShowPassword] = useState(false)
 	const [disabled, setDisabled] = useState(true)
 	const [loginInfo, setLoginInfo] = useState({
@@ -48,8 +50,10 @@ export const Form = () => {
 	}
 
 	const handleLogin = async () => {
+		setIsLoading(true)
 		const isError = await login(loginInfo, navigate)
 		setShowError(isError)
+		setIsLoading(false)
 	}
 
 	useEffect(() => {
@@ -110,13 +114,15 @@ export const Form = () => {
 
 			<div className="py-8">
 				<Button
-					disabled={disabled}
+					disabled={disabled || isLoading}
 					variant="contained"
 					sx={{
 						bgcolor: '#6E9E30',
 						color: 'white',
 						borderRadius: '20px',
 						width: '336px',
+						display: 'flex',
+
 						':hover': {
 							bgcolor: '#6E9E30',
 						},
@@ -127,7 +133,9 @@ export const Form = () => {
 					}}
 					onClick={handleLogin}
 				>
-					Ingresar
+					{isLoading ?
+						<CircularProgress size={25} sx={{ color: '#6E9E30' }} />
+					:	'Ingresar'}
 				</Button>
 			</div>
 		</>
