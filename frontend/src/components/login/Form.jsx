@@ -82,6 +82,7 @@ export const Form = () => {
 					value={loginInfo.email}
 					name={'email'}
 					handleChange={handleChange}
+					isLoading={isLoading}
 				/>
 
 				{/* Password input */}
@@ -93,6 +94,7 @@ export const Form = () => {
 						label="Password"
 						name="password"
 						value={loginInfo.password}
+						disabled={isLoading}
 						endAdornment={
 							<InputAdornment position="end">
 								<IconButton
