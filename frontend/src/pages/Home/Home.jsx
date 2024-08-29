@@ -3,7 +3,7 @@ import { Box, Container, Fab, Stack, Typography } from '@mui/material'
 import { NavBar } from '../../components'
 import people from '../../assets/img/people-banner.png'
 import bg from '../../assets/img/bg_section.png'
-import { HomeBannerSwiper, HomeFeaturedSwiper } from './swipers'
+import { HomeBannerSwiper, HomeFeaturedSwiper, HomeUserSwiper } from './swipers'
 import { ContactForm } from './ContactForm'
 
 export const Home = () => {
@@ -13,7 +13,7 @@ export const Home = () => {
 			<Box
 				sx={{
 					width: '100%',
-					mt: { xs: '55px' },
+					mt: { xs: '60px' },
 				}}
 			>
 				<Box
@@ -29,22 +29,6 @@ export const Home = () => {
 					}}
 				>
 					<HomeBannerSwiper />
-
-					<Fab
-						variant="extended"
-						sx={{
-							backgroundColor: '#6e9e30',
-							color: '#fff',
-							width: { xs: '188px' },
-							fontSize: { xs: '12px' },
-							mt: '106px',
-							'&:hover': {
-								backgroundColor: '#0D4937',
-							},
-						}}
-					>
-						Empezar ahora
-					</Fab>
 				</Box>
 				<Container
 					sx={{
@@ -61,15 +45,17 @@ export const Home = () => {
 							color: '#313031',
 						}}
 					>
-						Eventos de la comunidad
+						Fotos destacadas
 					</Typography>
 					<Typography sx={{ color: '#313031', fontWeight: '400' }}>
 						Los viajes más recientes de nuestra comunidad.
 					</Typography>
+					<HomeFeaturedSwiper />
 					<Box
 						sx={{
 							position: 'relative',
 							width: '100vw',
+							height: '96px',
 							left: '50%',
 							right: '50%',
 							ml: '-50vw',
@@ -79,52 +65,30 @@ export const Home = () => {
 							display: 'flex',
 							flexDirection: 'column',
 							alignItems: 'center',
-							textAlign: 'center',
+							justifyContent: 'center',
 						}}
 					>
-						<img src={bg} />
-						<Stack>
-							<Typography
-								sx={{ color: '#fff', fontWeight: '500' }}
-							>
-								Planifica tus rutas
-							</Typography>
-							<Typography
-								sx={{ color: '#fff', fontSize: '14px' }}
-							>
-								Organiza cada detalle de tu viaje con nuestras
-								herramientas de planificación.
-							</Typography>
-						</Stack>
-						<Fab
-							variant="extended"
+						<Typography
 							sx={{
-								backgroundColor: '#6E9E30',
 								color: '#fff',
-								width: { xs: '148px' },
-								fontSize: { xs: '12px' },
-								my: '50px',
-								'&:hover': {
-									backgroundColor: '#0D4937',
-								},
+								fontWeight: '500',
+								fontSize: '1.5rem',
 							}}
 						>
-							Crear evento
-						</Fab>
+							Servicios
+						</Typography>
 					</Box>
-					<Typography
-						sx={{
-							fontSize: '1.5rem',
-							fontWeight: '500',
-							color: '#313031',
-						}}
-					>
-						Fotos destacadas
-					</Typography>
-					<Typography sx={{ color: '#313031', fontWeight: '400' }}>
-						Los viajes más recientes de nuestra comunidad.
-					</Typography>
-					<HomeFeaturedSwiper />
+					<img src={bg} />
+					<Stack>
+						<Typography sx={{ color: '#fff', fontWeight: '500' }}>
+							Planifica tus rutas
+						</Typography>
+						<Typography sx={{ color: '#fff', fontSize: '14px' }}>
+							Organiza cada detalle de tu viaje con nuestras
+							herramientas de planificación.
+						</Typography>
+					</Stack>
+					<HomeUserSwiper />
 					<Box
 						sx={{
 							my: '60px',

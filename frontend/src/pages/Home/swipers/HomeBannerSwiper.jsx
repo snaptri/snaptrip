@@ -1,51 +1,71 @@
 /* eslint-disable arrow-body-style */
-
-import React, { useRef, useState } from 'react'
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-import './styles.css'
-import banner from '../../../assets/img/banner.png'
+import './homeStyles.css'
+import banners from './homeSliders.json'
 
 import { Pagination } from 'swiper/modules'
-import { Typography } from '@mui/material'
+import { Box, Fab, Typography } from '@mui/material'
 
 export const HomeBannerSwiper = () => {
 	return (
 		<>
-			<Swiper modules={[Pagination]} className="mySwiper">
-				<SwiperSlide
-					style={{
-						backgroundImage: `url(${banner})`,
-						backgroundSize: 'cover',
-						backgroundPosition: 'center',
-						backgroundRepeat: 'no-repeat',
-					}}
-				>
-					<Typography
-						sx={{
-							fontWeight: '600',
-							fontSize: '2.5rem',
-							color: '#fff',
-						}}
-					>
-						Planifica tu viaje fotográfico perfecto
-					</Typography>
-					<Typography
-						sx={{
-							fontWeight: '700',
-							fontSize: '1.25rem',
-							color: '#fff',
-							opacity: '0.7',
-						}}
-					>
-						Descubre como SnapTrip puede ayudarte a planificar tu
-						viaje.
-					</Typography>
-				</SwiperSlide>
+			<Swiper
+				pagination={true}
+				modules={[Pagination]}
+				className="mySwiper"
+				style={{
+					'--swiper-pagination-color': '#0D4937',
+					'--swiper-pagination-bullet-inactive-color': '#fff',
+					'--swiper-pagination-bullet-inactive-opacity': '.8',
+					'--swiper-pagination-bullet-size': '10px',
+					'--swiper-pagination-bullet-horizontal-gap': '7px',
+				}}
+			>
+				{banners.images.map((image, index) => (
+					<SwiperSlide key={index}>
+						<Box
+							sx={{
+								backgroundImage: `url(${image.image_url})`,
+								height: '100%',
+								width: '100%',
+								backgroundRepeat: 'no-repeat',
+								display: 'flex',
+								flexDirection: 'column',
+								alignItems: 'center',
+								justifyContent: 'center',
+								gap: '173px',
+							}}
+						>
+							<Typography
+								sx={{
+									fontSize: '2.5rem',
+									color: '#fff',
+									fontWeight: '600',
+								}}
+							>
+								{image.title}
+							</Typography>
+							<Fab
+								variant="extended"
+								sx={{
+									backgroundColor: '#6e9e30',
+									color: '#fff',
+									width: { xs: '188px' },
+									fontSize: { xs: '12px' },
+									'&:hover': {
+										backgroundColor: '#0D4937',
+									},
+								}}
+							>
+								Empezar ahora
+							</Fab>
+						</Box>
+					</SwiperSlide>
+				))}
 			</Swiper>
 		</>
 	)

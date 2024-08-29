@@ -1,0 +1,36 @@
+{
+	"images": [
+		{
+			"id": 1,
+			"title": "Descubre tu próximo destino",
+			"image_url": "/assets/img/banner-1.png"
+		},
+		{
+			"id": 2,
+			"title": "Comparte tus fotografías con la comunidad",
+			"image_url": "../../../assets/img/banner-2.png"
+		},
+		{
+			"id": 3,
+			"title": "Planifica tu viaje fotográfico perfecto",
+			"image_url": "../../../assets/img/banner-3.png"
+		}
+	],
+	"users": [
+		{
+			"user_name": "Francisco Asadurihan",
+			"description": "“Una herramienta indispensable para planificar sesiones fotográficas en cualquier lugar del mundo. ¡Imprescindible!”.",
+			"profile_img": ""
+		},
+		{
+			"user_name": "Julieta Sulibarri",
+			"description": "“Me permite descubrir nuevas ubicaciones y planific mis disparos con precisión”.",
+			"profile_img": ""
+		},
+		{
+			"user_name": "Tomás Jinkler",
+			"description": "“La mejor aliada para planificar mis aventuras fotográficas y sacar el máximo provecho de cada localización”.",
+			"profile_img": ""
+		}
+	]
+}
