@@ -55,7 +55,7 @@
 	width: 100%;
 	height: 19vh;
 	@media screen and (width > 900px) {
-		height: 19vh;
+		height: 27vh;
 
 		display: grid;
 		place-content: center;

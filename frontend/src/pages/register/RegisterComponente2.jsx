@@ -54,7 +54,7 @@ export const RegisterComponente = () => {
 	const [confirmPassword, setConfirmPassword] = useState('')
 	const [error, setError] = useState('')
 	// estos estados todavia no funcionan automaticamente, pero si manualmente
-	const [ActiveButtonRegister, setActiveButtonRegister] = useState(false)
+	const [ActiveButtonRegister, setActiveButtonRegister] = useState(true)
 
 	const [PasswordHas8char, setPasswordHas8char] = useState(false)
 	const [MatchPassword, setMatchPassword] = useState(false)
@@ -140,37 +140,37 @@ export const RegisterComponente = () => {
 			setError('Las contraseñas no coinciden.')
 			return
 		} else {
-			setcorrectCharactert(true)
+			// setcorrectCharactert(true)
 			setActiveButtonRegister(true)
 
 			setActiveButtonRegister(true)
 		}
 		if (hasUpperCase) {
 			// console.log('está entrando mayusculas')
-			setPasswordUpperCase(true)
+			// setPasswordUpperCase(true)
 		}
-		if (hasNumbers) {
-			setPasswordHasNumbers(true)
-		}
-		if (hasLowerCase) {
-			setPasswordHasLowercase(true)
-		}
+		// if (hasNumbers) {
+		// 	setPasswordHasNumbers(true)
+		// }
+		// if (hasLowerCase) {
+		// 	setPasswordHasLowercase(true)
+		// }
 
-		if (hasNonalphas) {
-			setPasswordHasSpecialChar(true)
-		}
-		if (confirmPassword) {
-			setMatchPassword(true)
-		}
-		console.log('la peticion fue exitosa ' + resStatus)
+		// if (hasNonalphas) {
+		// 	setPasswordHasSpecialChar(true)
+		// }
+		// if (confirmPassword) {
+		// 	setMatchPassword(true)
+		// }
 		setUser('http://127.0.0.1:8000/account/register-user/', {
 			email: email,
 			password: password,
 			confirm_password: confirmPassword,
 		})
+		console.log('la peticion fue exitosa ' + resStatus)
 
 		// Aquí iría el código para registrar al usuario si el correo electrónico está disponible.
-		// console.log('Registrando usuario:', { name, email, username })
+		console.log('Registrando usuario:', { password, email, confirmPassword })
 		setError('')
 		// Reiniciar el formulario
 		// setName('')
@@ -189,18 +189,18 @@ export const RegisterComponente = () => {
 		const MILISECONDS = 1000
 
 		setTimeout(() => {
-			Nav('/auth')
+			// Nav('/auth')
 		}, MILISECONDS)
 	}
 
 	const handleValidationPassword = (e) => {
 		if (e.length >= MIN_PASSWORD_LENGTH) {
 			setPasswordHas8char(true)
-			setActiveButtonRegister(true)
-			setPasswordUpperCase(true)
-			setPasswordHasLowercase(true)
-			setPasswordHasNumbers(true)
-			setPasswordHasSpecialChar(true)
+			// setActiveButtonRegister(true)
+			// setPasswordUpperCase(true)
+			// setPasswordHasLowercase(true)
+			// setPasswordHasNumbers(true)
+			// setPasswordHasSpecialChar(true)
 		}
 
 		if (hasUpperCase) {
@@ -294,7 +294,7 @@ export const RegisterComponente = () => {
 								label="Password"
 							/>
 
-							{MatchPassword ?
+						{/*	{MatchPassword ?
 								<div className={div_iconSuccesPassword}>
 									<CheckCircleIcon color="success" />
 									Contraseña Valida
@@ -306,7 +306,7 @@ export const RegisterComponente = () => {
 										></button>
 										<p>minimo 8 caracteres</p>
 									</div>
-									<div className="flex flex-row items-center gap-3">
+									 <div className="flex flex-row items-center gap-3">
 										<button
 											className={`${!PasswordHasUpperCase ? div_button_password_styles_none : div_button_password_styles_nice}  `}
 										></button>
@@ -329,9 +329,9 @@ export const RegisterComponente = () => {
 											className={`${!PasswordHasSpecialChar ? div_button_password_styles_none : div_button_password_styles_nice}  `}
 										></button>
 										<p>tiene caracteres especiales</p>
-									</div>
+									</div> 
 								</div>
-							}
+							}*/}
 						</FormControl>
 						<FormControl
 							className={formstyles}
@@ -399,7 +399,7 @@ export const RegisterComponente = () => {
 					}
 
 					{error && (
-						<Alert severity="error" style={{ marginTop: '20px' }}>
+						<Alert severity="error" style={{ marginTop: '20px', alignItems: "center" }}>
 							{error}
 						</Alert>
 					)}
