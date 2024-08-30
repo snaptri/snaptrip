@@ -20,17 +20,17 @@
 		{
 			"user_name": "Francisco Asadurihan",
 			"description": "“Una herramienta indispensable para planificar sesiones fotográficas en cualquier lugar del mundo. ¡Imprescindible!”.",
-			"profile_img": ""
+			"profile_img": "/assets/img/avatar-1.png"
 		},
 		{
 			"user_name": "Julieta Sulibarri",
 			"description": "“Me permite descubrir nuevas ubicaciones y planific mis disparos con precisión”.",
-			"profile_img": ""
+			"profile_img": "/assets/img/avatar-2.jpg"
 		},
 		{
 			"user_name": "Tomás Jinkler",
 			"description": "“La mejor aliada para planificar mis aventuras fotográficas y sacar el máximo provecho de cada localización”.",
-			"profile_img": ""
+			"profile_img": "/assets/img/avatar-3.png"
 		}
 	]
 }

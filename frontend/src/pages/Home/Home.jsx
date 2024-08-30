@@ -88,6 +88,15 @@ export const Home = () => {
 							herramientas de planificación.
 						</Typography>
 					</Stack>
+					<Typography
+						sx={{
+							fontSize: '1.5rem',
+							color: '#313031',
+							fontWeight: '500',
+						}}
+					>
+						Únete a nuestra comunidad de fotógrafos profesionales
+					</Typography>
 					<HomeUserSwiper />
 					<Box
 						sx={{
