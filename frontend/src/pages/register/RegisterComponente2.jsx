@@ -167,7 +167,7 @@ export const RegisterComponente = () => {
 			password: password,
 			confirm_password: confirmPassword,
 		})
-		console.log('la peticion fue exitosa ' + resStatus)
+		console.log('la peticion fue exitosa ' + resStatus + setUser)
 
 		// Aquí iría el código para registrar al usuario si el correo electrónico está disponible.
 		console.log('Registrando usuario:', { password, email, confirmPassword })
