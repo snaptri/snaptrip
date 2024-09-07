@@ -1,0 +1,7 @@
+.features img {
+	display: block;
+	aspect-ratio: initial;
+	border-radius: 0;
+	width: 100%;
+	height: auto;
+}

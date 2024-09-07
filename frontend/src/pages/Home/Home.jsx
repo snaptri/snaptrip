@@ -3,7 +3,12 @@ import { Box, Container, Fab, Stack, Typography } from '@mui/material'
 import { NavBar } from '../../components'
 import people from '../../assets/img/people-banner.png'
 import bg from '../../assets/img/bg_section.png'
-import { HomeBannerSwiper, HomeFeaturedSwiper, HomeUserSwiper } from './swipers'
+import {
+	HomeBannerSwiper,
+	HomeFeaturedSwiper,
+	HomeServicesSwiper,
+	HomeUserSwiper,
+} from './swipers'
 import { ContactForm } from './ContactForm'
 
 export const Home = () => {
@@ -51,34 +56,7 @@ export const Home = () => {
 						Los viajes más recientes de nuestra comunidad.
 					</Typography>
 					<HomeFeaturedSwiper />
-					<Box
-						sx={{
-							position: 'relative',
-							width: '100vw',
-							height: '96px',
-							left: '50%',
-							right: '50%',
-							ml: '-50vw',
-							mr: '-50vw',
-							backgroundColor: '#0D4937',
-							mt: '90px',
-							display: 'flex',
-							flexDirection: 'column',
-							alignItems: 'center',
-							justifyContent: 'center',
-						}}
-					>
-						<Typography
-							sx={{
-								color: '#fff',
-								fontWeight: '500',
-								fontSize: '1.5rem',
-							}}
-						>
-							Servicios
-						</Typography>
-					</Box>
-					<img src={bg} />
+					<HomeServicesSwiper />
 					<Stack>
 						<Typography sx={{ color: '#fff', fontWeight: '500' }}>
 							Planifica tus rutas

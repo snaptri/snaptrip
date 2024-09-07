@@ -32,5 +32,22 @@
 			"description": "“La mejor aliada para planificar mis aventuras fotográficas y sacar el máximo provecho de cada localización”.",
 			"profile_img": "/assets/img/avatar-3.png"
 		}
+	],
+	"features": [
+		{
+			"title": "Planifica tu inventario",
+			"description": "Planifica cada detalle de tu viaje, agregando spots fotográficos, transporte y eventos para cada día",
+			"image_feature": "/assets/img/feat-1.png"
+		},
+		{
+			"title": "Galeria de referencias",
+			"description": "Guarda las fotos de la comunidad de los sitios que quieras visitar en este viaje",
+			"image_feature": "/assets/img/feat-2.png"
+		},
+		{
+			"title": "Initnerario de elementos",
+			"description": "Para que no olvides llevar cosas importantes en tu viaje",
+			"image_feature": "/assets/img/feat-3.png"
+		}
 	]
 }
