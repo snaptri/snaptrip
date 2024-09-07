@@ -20,8 +20,8 @@ export const HomeServicesSwiper = () => {
 				modules={[Pagination, Navigation]}
 				className="mySwiper"
 			>
-				<SwiperSlide className='features'>
-                    <Box
+				<SwiperSlide className="features">
+					<Box
 						sx={{
 							position: 'relative',
 							width: '100vw',
@@ -45,54 +45,54 @@ export const HomeServicesSwiper = () => {
 						</Typography>
 					</Box>
 					<img src={bg} />
-                    <Typography
+					<Typography
+						sx={{
+							color: '#313031',
+							fontWeight: '500',
+							fontSize: '1rem',
+						}}
+					>
+						Conoce nuestras herramientas para planificar tu viaje
+					</Typography>
+					<img src={features} />
+				</SwiperSlide>
+				{featureList.features.map((feature, index) => (
+					<SwiperSlide className="features" key={index}>
+						<Box
+							sx={{
+								position: 'relative',
+								width: '100vw',
+								height: '96px',
+								backgroundColor: '#0D4937',
+								mt: '90px',
+								display: 'flex',
+								flexDirection: 'column',
+								alignItems: 'center',
+								justifyContent: 'center',
+							}}
+						>
+							<Typography
+								sx={{
+									color: '#fff',
+									fontWeight: '400',
+									fontSize: '1.5rem',
+								}}
+							>
+								{feature.title}
+							</Typography>
+						</Box>
+						<Typography
 							sx={{
 								color: '#313031',
 								fontWeight: '500',
 								fontSize: '1rem',
 							}}
 						>
-							Conoce nuestras herramientas para planificar tu viaje
-						</Typography>
-                        <img src={features} />
-					</SwiperSlide>
-					{featureList.features.map((feature, index) => (
-						<SwiperSlide className='features' key={index}>
-						<Box
-						sx={{
-							position: 'relative',
-							width: '100vw',
-							height: '96px',
-							backgroundColor: '#0D4937',
-							mt: '90px',
-							display: 'flex',
-							flexDirection: 'column',
-							alignItems: 'center',
-							justifyContent: 'center',
-						}}
-					>
-						<Typography
-							sx={{
-								color: '#fff',
-								fontWeight: '400',
-								fontSize: '1.5rem',
-							}}
-						>
-							{feature.title}
-						</Typography>
-					</Box>
-                    <Typography
-						sx={{
-							color: '#313031',
-							fontWeight: '500',
-							fontSize: '1rem',
-						}}
-						>
 							{feature.description}
 						</Typography>
-                        <img src={feature.image_feature} />
-						</SwiperSlide>
-					))}
+						<img src={feature.image_feature} />
+					</SwiperSlide>
+				))}
 			</Swiper>
 		</>
 	)
