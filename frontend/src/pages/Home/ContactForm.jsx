@@ -1,7 +1,29 @@
 /* eslint-disable arrow-body-style */
-import { Box, Fab, Link, styled, TextField, Typography } from '@mui/material'
+import {
+	Box,
+	Button,
+	Fab,
+	Link,
+	styled,
+	TextField,
+	Typography,
+} from '@mui/material'
+import { useForm, Controller } from 'react-hook-form'
 
 export const ContactForm = () => {
+	const {
+		register,
+		handleSubmit,
+		reset,
+		control,
+		formState: { errors },
+	} = useForm()
+	const onSubmit = handleSubmit((data) => {
+		// eslint-disable-next-line no-console
+		console.log('formulario enviado', data)
+		reset()
+	})
+
 	const StyledTextField = styled(TextField)`
 		& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
 			border-color: #fff;
@@ -28,26 +50,60 @@ export const ContactForm = () => {
 			color: #fff;
 		}
 	`
+
 	return (
-		<Box
-			sx={{
+		<form
+			style={{
 				backgroundColor: '#0D4937',
 				width: '100%',
 				display: 'flex',
 				flexDirection: 'column',
-				px: '1rem',
-				py: '3rem',
+				padding: '3rem 1rem',
 				gap: '1rem',
 			}}
+			onSubmit={onSubmit}
 		>
 			<Typography sx={{ color: '#fff', fontSize: '1.25rem' }}>
 				Contactanos:
 			</Typography>
-			<StyledTextField label="Nombre" variant="outlined" />
-			<StyledTextField label="Email" variant="outlined" />
-			<StyledTextField label="Mensaje" variant="outlined" />
-			<Fab
-				variant="extended"
+			<StyledTextField
+				label="Nombre"
+				variant="outlined"
+				{...register('nombre', {
+					required: true,
+				})}
+			/>
+			{errors.nombre && (
+				<span style={{ color: 'red', fontSize: '11px' }}>
+					Este campo es requerido
+				</span>
+			)}
+			<StyledTextField
+				label="Email"
+				variant="outlined"
+				{...register('email', {
+					required: true,
+				})}
+			/>
+			{errors.email && (
+				<span style={{ color: 'red', fontSize: '11px' }}>
+					Este campo es requerido
+				</span>
+			)}
+			<StyledTextField
+				label="Mensaje"
+				variant="outlined"
+				{...register('mensaje', {
+					required: true,
+				})}
+			/>
+			{errors.mensaje && (
+				<span style={{ color: 'red', fontSize: '11px' }}>
+					Este campo es requerido
+				</span>
+			)}
+			<button
+				variant="contained"
 				sx={{
 					backgroundColor: '#6E9E30',
 					color: '#fff',
@@ -60,21 +116,7 @@ export const ContactForm = () => {
 				}}
 			>
 				Enviar
-			</Fab>
-			<footer className="text-white flex flex-col items-center gap-2 mt-10 text-xs">
-				<Typography fontSize="12px">
-					&#169; S16-17-Python-React 2024
-				</Typography>
-				<Link href="#" underline="none" color="inherit">
-					Términos y condiciones
-				</Link>
-				<Link href="#" underline="none" color="inherit">
-					Mapa del Sitio
-				</Link>
-				<Link href="#" underline="none" color="inherit">
-					Privacidad
-				</Link>
-			</footer>
-		</Box>
+			</button>
+		</form>
 	)
 }

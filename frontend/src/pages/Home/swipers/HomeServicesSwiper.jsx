@@ -19,6 +19,13 @@ export const HomeServicesSwiper = () => {
 				pagination={true}
 				modules={[Pagination, Navigation]}
 				className="mySwiper"
+				style={{
+					'--swiper-pagination-color': '#0D4937',
+					'--swiper-pagination-bullet-inactive-color': '#adadad',
+					'--swiper-pagination-bullet-inactive-opacity': '.8',
+					'--swiper-pagination-bullet-size': '10px',
+					'--swiper-pagination-bullet-horizontal-gap': '7px',
+				}}
 			>
 				<SwiperSlide className="features">
 					<Box
