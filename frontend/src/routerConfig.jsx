@@ -10,6 +10,8 @@ import {
 import { NavBar } from './components'
 import { EditAccountPage } from './pages/Account/EditAccountPage'
 import { Account } from './pages/Account/Account'
+import Feed from './pages/Feed/FeedComp'
+
 
 export const routes = [
 	{
@@ -31,6 +33,10 @@ export const routes = [
 	{
 		path: '/account',
 		element: <Account />,
+	},
+	{
+		path: "/account/feed",
+		element: <Feed/>
 	},
 	{
 		path: '/create/photo',
