@@ -28,6 +28,7 @@ urlpatterns = [
     path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
     path('cameras/', include('apps.camera.urls')),
     path('lens/', include('apps.lens.urls')), 
-    path('photo/', include('apps.photo.urls'))
+    path('photo/', include('apps.photo.urls')),
+    path('albums/', include('apps.album.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
