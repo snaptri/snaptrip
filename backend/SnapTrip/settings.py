@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'apps.lens',
     'apps.photo',
     'apps.album',
+    'apps.events'
     
 ]
 
