@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.events.models import Event, EventHistory
+from apps.events.models import Event, EventHistory, EventLike
 
 class EventSerializer(serializers.ModelSerializer):
     created_at = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S', read_only=True)
@@ -17,4 +17,11 @@ class EventHistorySerializer(serializers.ModelSerializer):
     
     class Meta:
         model = EventHistory
+        fields = '__all__'
+
+
+class EventLikeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = EventLike
         fields = '__all__'

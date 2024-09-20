@@ -44,3 +44,14 @@ class EventHistory(models.Model):
 
     def __str__(self):
         return f'{self.account.username} - {self.event.event_name}'
+
+
+class EventLike(models.Model):
+
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = ('event', 'account')
