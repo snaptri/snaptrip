@@ -30,5 +30,6 @@ urlpatterns = [
     path('lens/', include('apps.lens.urls')), 
     path('photo/', include('apps.photo.urls')),
     path('albums/', include('apps.album.urls')),
+    path('events/', include('apps.events.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
