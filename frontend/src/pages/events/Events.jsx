@@ -17,7 +17,7 @@ export const Events = () => {
 			<Box
 				sx={{
 					display: 'flex',
-					flexDirection: { xs: 'column', md: 'row' },
+					flexDirection: 'column',
 					gap: '15px',
 					mb: '100px',
 				}}

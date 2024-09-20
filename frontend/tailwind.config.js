@@ -14,7 +14,7 @@ module.exports = {
       extend: {
         colors: {
           primaryText: '#313031',
-          hoverBtn: '#163E32',
+          hoverBtn: '#0D4937',
           hoverLink: '#0D4937',
           validationText: '#807D84'
         },

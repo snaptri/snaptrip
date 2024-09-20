@@ -8,6 +8,7 @@ export const CustomTextField = ({
 	name,
 	handleChange,
 	value,
+	isLoading,
 	icon,
 	setShowPassword,
 	showPassword,
@@ -21,6 +22,7 @@ export const CustomTextField = ({
 			onChange={handleChange}
 			variant="outlined"
 			className=""
+			disabled={isLoading}
 		/>
 		{/* {icon ? (
                 <span

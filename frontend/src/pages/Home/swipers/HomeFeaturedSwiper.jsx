@@ -6,11 +6,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 import './styles.css'
 import images from './galleryHome.json'
 
-import { Pagination, Autoplay } from 'swiper/modules'
+import { Navigation } from 'swiper/modules'
 import {
 	Box,
 	Checkbox,
@@ -20,27 +21,19 @@ import {
 } from '@mui/material'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined'
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder'
-import Favorite from '@mui/icons-material/Favorite'
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder'
-import BookmarkIcon from '@mui/icons-material/Bookmark'
 
 export const HomeFeaturedSwiper = () => {
 	return (
 		<>
 			<Swiper
-				slidesPerView={'auto'}
 				spaceBetween={30}
-				autoplay={{
-					delay: 2500,
-					disableOnInteraction: false,
-				}}
+				centeredSlides={true}
 				navigation={true}
-				modules={[Autoplay, Pagination]}
+				modules={[Navigation]}
 				className="mySwiper"
 			>
 				{images.sections?.featured.map((img, index) => (
-					<SwiperSlide key={index} className="flex flex-col">
+					<SwiperSlide key={index}>
 						<img src={img.image_url} alt={img.title} />
 						<ListItem sx={{ p: 0, gap: '5px' }}>
 							<AccountCircleOutlinedIcon
@@ -56,46 +49,6 @@ export const HomeFeaturedSwiper = () => {
 									},
 								}}
 							/>
-							<Box
-								sx={{
-									display: 'flex',
-									fontSize: '14px',
-									alignItems: 'center',
-									gap: '5px',
-								}}
-							>
-								{img.likes}
-								<Checkbox
-									icon={<FavoriteBorder />}
-									checkedIcon={
-										<Favorite sx={{ color: 'red' }} />
-									}
-									sx={{
-										px: 0,
-									}}
-								/>
-							</Box>
-							<Box
-								sx={{
-									display: 'flex',
-									fontSize: '14px',
-									alignItems: 'center',
-									gap: '5px',
-								}}
-							>
-								{img.favorites}
-								<Checkbox
-									icon={<BookmarkBorderIcon />}
-									checkedIcon={
-										<BookmarkIcon
-											sx={{ color: '#6E9E30' }}
-										/>
-									}
-									sx={{
-										px: 0,
-									}}
-								/>
-							</Box>
 						</ListItem>
 						<ListItem sx={{ p: 0 }}>
 							<LocationOnIcon sx={{ color: '#313031' }} />
